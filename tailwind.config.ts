@@ -63,18 +63,31 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			colors: {
+				'gold': {
+					primary: 'hsl(var(--gold-primary))',
+					secondary: 'hsl(var(--gold-secondary))',
+					tertiary: 'hsl(var(--gold-tertiary))',
+				}
+			},
 			backgroundImage: {
-				'fashion-gradient': 'var(--fashion-gradient)',
-				'fashion-gradient-subtle': 'var(--fashion-gradient-subtle)',
-				'fashion-border-gradient': 'var(--fashion-border-gradient)'
+				'luxury-gradient': 'var(--luxury-gradient)',
+				'luxury-gradient-subtle': 'var(--luxury-gradient-subtle)',
+				'luxury-gradient-glow': 'var(--luxury-gradient-glow)'
 			},
 			boxShadow: {
-				'fashion': 'var(--fashion-shadow)',
-				'fashion-lg': 'var(--fashion-shadow-lg)'
+				'neuro': 'var(--neuro-shadow-light)',
+				'neuro-inset': 'var(--neuro-shadow-inset)',
+				'neuro-pressed': 'var(--neuro-shadow-pressed)',
+				'neuro-hover': 'var(--neuro-shadow-hover)',
+				'gold-glow': 'var(--gold-glow)',
+				'gold-glow-intense': 'var(--gold-glow-intense)',
+				'gold-shadow': 'var(--gold-shadow)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
-				'spring': 'var(--transition-spring)'
+				'spring': 'var(--transition-spring)',
+				'luxury': 'var(--transition-luxury)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -97,11 +110,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'gradientShift': {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: 'var(--gold-glow)' },
+					'50%': { boxShadow: 'var(--gold-glow-intense)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'gradientShift': 'gradientShift 3s ease infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
 			}
 		}
 	},

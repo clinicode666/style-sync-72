@@ -29,11 +29,11 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="fashion" size="lg" className="gap-2">
+              <Button variant="luxury" size="lg" className="gap-2">
                 <Camera className="h-5 w-5" />
                 Começar Agora
               </Button>
-              <Button variant="fashion-outline" size="lg" className="gap-2">
+              <Button variant="luxury-outline" size="lg" className="gap-2">
                 <Sparkles className="h-5 w-5" />
                 Ver Como Funciona
               </Button>

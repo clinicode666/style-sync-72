@@ -9,12 +9,14 @@ import { Sparkles, MapPin, Thermometer, Cloud, Star, Heart } from "lucide-react"
 
 const LookGenerator = () => {
   return (
-    <section className="py-12 bg-fashion-gradient-subtle">
-      <div className="container mx-auto px-4">
+    <section className="py-12 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-background to-card/30" />
+      <div className="absolute top-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold">Gerador de Looks IA</h2>
+            <Sparkles className="h-8 w-8 text-primary animate-pulse" />
+            <h2 className="text-3xl font-bold text-gradient">Gerador de Looks IA</h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Nossa IA analisa suas peças, o clima e o evento para criar looks perfeitos para você
@@ -23,9 +25,9 @@ const LookGenerator = () => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Look Generation Form */}
-          <Card className="lg:col-span-1 shadow-fashion">
+          <Card className="lg:col-span-1 neuro border-0">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-foreground">
                 <Sparkles className="h-5 w-5 text-primary" />
                 Configurar Look
               </CardTitle>
@@ -72,7 +74,7 @@ const LookGenerator = () => {
                 />
               </div>
 
-              <Button variant="fashion" className="w-full gap-2" size="lg">
+              <Button variant="luxury" className="w-full gap-2" size="lg">
                 <Sparkles className="h-4 w-4" />
                 Gerar Looks
               </Button>
@@ -85,13 +87,13 @@ const LookGenerator = () => {
             
             {/* Mock generated looks */}
             {[1, 2, 3].map((lookId) => (
-              <Card key={lookId} className="shadow-fashion hover:shadow-fashion-lg transition-smooth">
+              <Card key={lookId} className="neuro hover:shadow-neuro-hover transition-luxury border-0">
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h4 className="font-semibold text-lg flex items-center gap-2">
+                      <h4 className="font-semibold text-lg flex items-center gap-2 text-foreground">
                         Look Executivo
-                        <Badge variant="secondary" className="bg-fashion-gradient text-white">
+                        <Badge variant="secondary" className="luxury-gradient text-primary-foreground neuro">
                           <Star className="h-3 w-3 mr-1" />
                           95% Match
                         </Badge>
@@ -100,21 +102,21 @@ const LookGenerator = () => {
                         Perfeito para reuniões importantes
                       </p>
                     </div>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="neuro" size="icon">
                       <Heart className="h-4 w-4" />
                     </Button>
                   </div>
 
                   <div className="grid grid-cols-4 gap-4 mb-4">
                     {/* Mock clothing items in the look */}
-                    {['Camisa Branca', 'Calça Social', 'Sapato Social', 'Gravata'].map((item, index) => (
-                      <div key={index} className="text-center">
-                        <div className="h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-2 flex items-center justify-center">
-                          <span className="text-xs text-gray-500">{item}</span>
+                      {['Camisa Branca', 'Calça Social', 'Sapato Social', 'Gravata'].map((item, index) => (
+                        <div key={index} className="text-center">
+                          <div className="h-20 neuro-inset bg-gradient-to-br from-secondary to-muted rounded-lg mb-2 flex items-center justify-center">
+                            <span className="text-xs text-muted-foreground">{item}</span>
+                          </div>
+                          <p className="text-xs text-muted-foreground">{item}</p>
                         </div>
-                        <p className="text-xs text-muted-foreground">{item}</p>
-                      </div>
-                    ))}
+                      ))}
                   </div>
 
                   <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
@@ -136,10 +138,10 @@ const LookGenerator = () => {
                   </p>
 
                   <div className="flex gap-2">
-                    <Button variant="fashion" size="sm" className="flex-1">
+                    <Button variant="luxury" size="sm" className="flex-1">
                       Usar Este Look
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button variant="luxury-outline" size="sm">
                       Personalizar
                     </Button>
                   </div>
