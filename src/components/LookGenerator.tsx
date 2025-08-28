@@ -10,7 +10,16 @@ import {
   Share, 
   Calendar,
   Thermometer,
-  Star
+  Star,
+  Briefcase,
+  Coffee,
+  PartyPopper,
+  Dumbbell,
+  Crown,
+  Sun,
+  Cloud,
+  Snowflake,
+  CloudRain
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -20,19 +29,19 @@ const LookGenerator = () => {
   const [currentLook, setCurrentLook] = useState(null);
 
   const occasions = [
-    { id: "trabalho", label: "Trabalho", icon: "💼" },
-    { id: "casual", label: "Casual", icon: "👕" },
-    { id: "festa", label: "Festa", icon: "🎉" },
-    { id: "esporte", label: "Esporte", icon: "🏃" },
-    { id: "romântico", label: "Romântico", icon: "💕" },
-    { id: "formal", label: "Formal", icon: "🤵" },
+    { id: "trabalho", label: "Trabalho", icon: Briefcase },
+    { id: "casual", label: "Casual", icon: Coffee },
+    { id: "festa", label: "Festa", icon: PartyPopper },
+    { id: "esporte", label: "Esporte", icon: Dumbbell },
+    { id: "romântico", label: "Romântico", icon: Heart },
+    { id: "formal", label: "Formal", icon: Crown },
   ];
 
   const weather = [
-    { id: "quente", label: "Quente", icon: "☀️", temp: "25°C+" },
-    { id: "ameno", label: "Ameno", icon: "⛅", temp: "15-25°C" },
-    { id: "frio", label: "Frio", icon: "❄️", temp: "0-15°C" },
-    { id: "chuva", label: "Chuva", icon: "🌧️", temp: "Variável" },
+    { id: "quente", label: "Quente", icon: Sun, temp: "25°C+" },
+    { id: "ameno", label: "Ameno", icon: Cloud, temp: "15-25°C" },
+    { id: "frio", label: "Frio", icon: Snowflake, temp: "0-15°C" },
+    { id: "chuva", label: "Chuva", icon: CloudRain, temp: "Variável" },
   ];
 
   const mockLook = {
@@ -97,16 +106,19 @@ const LookGenerator = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {occasions.map((occasion) => (
-                    <Button
-                      key={occasion.id}
-                      variant="luxury-outline"
-                      className="h-auto p-4 flex-col gap-2 text-foreground"
-                    >
-                      <span className="text-2xl">{occasion.icon}</span>
-                      <span className="text-sm">{occasion.label}</span>
-                    </Button>
-                  ))}
+                  {occasions.map((occasion) => {
+                    const IconComponent = occasion.icon;
+                    return (
+                      <Button
+                        key={occasion.id}
+                        variant="luxury-outline"
+                        className="h-auto p-4 flex-col gap-2 text-foreground"
+                      >
+                        <IconComponent className="h-6 w-6 text-primary" />
+                        <span className="text-sm">{occasion.label}</span>
+                      </Button>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
@@ -121,17 +133,20 @@ const LookGenerator = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-3">
-                  {weather.map((condition) => (
-                    <Button
-                      key={condition.id}
-                      variant="luxury-outline"
-                      className="h-auto p-4 flex-col gap-1 text-foreground"
-                    >
-                      <span className="text-2xl">{condition.icon}</span>
-                      <span className="text-sm font-medium">{condition.label}</span>
-                      <span className="text-xs text-muted-foreground">{condition.temp}</span>
-                    </Button>
-                  ))}
+                  {weather.map((condition) => {
+                    const IconComponent = condition.icon;
+                    return (
+                      <Button
+                        key={condition.id}
+                        variant="luxury-outline"
+                        className="h-auto p-4 flex-col gap-1 text-foreground"
+                      >
+                        <IconComponent className="h-6 w-6 text-primary" />
+                        <span className="text-sm font-medium">{condition.label}</span>
+                        <span className="text-xs text-muted-foreground">{condition.temp}</span>
+                      </Button>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
