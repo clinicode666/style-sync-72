@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      garments: {
+        Row: {
+          color_primary: string
+          color_secondary: string | null
+          created_at: string
+          fit: string | null
+          formality: number | null
+          id: string
+          image_url: string
+          last_worn: string | null
+          material: string | null
+          pattern: string | null
+          season: string[] | null
+          subtype: string | null
+          type: string
+          updated_at: string
+          user_id: string
+          warmth: number | null
+          worn_count: number | null
+        }
+        Insert: {
+          color_primary: string
+          color_secondary?: string | null
+          created_at?: string
+          fit?: string | null
+          formality?: number | null
+          id?: string
+          image_url: string
+          last_worn?: string | null
+          material?: string | null
+          pattern?: string | null
+          season?: string[] | null
+          subtype?: string | null
+          type: string
+          updated_at?: string
+          user_id: string
+          warmth?: number | null
+          worn_count?: number | null
+        }
+        Update: {
+          color_primary?: string
+          color_secondary?: string | null
+          created_at?: string
+          fit?: string | null
+          formality?: number | null
+          id?: string
+          image_url?: string
+          last_worn?: string | null
+          material?: string | null
+          pattern?: string | null
+          season?: string[] | null
+          subtype?: string | null
+          type?: string
+          updated_at?: string
+          user_id?: string
+          warmth?: number | null
+          worn_count?: number | null
+        }
+        Relationships: []
+      }
+      looks: {
+        Row: {
+          created_at: string
+          dress_code: string | null
+          garment_ids: string[]
+          id: string
+          name: string
+          notes: string | null
+          occasion: string | null
+          rating: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          dress_code?: string | null
+          garment_ids: string[]
+          id?: string
+          name: string
+          notes?: string | null
+          occasion?: string | null
+          rating?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          dress_code?: string | null
+          garment_ids?: string[]
+          id?: string
+          name?: string
+          notes?: string | null
+          occasion?: string | null
+          rating?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
