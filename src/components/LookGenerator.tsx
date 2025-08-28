@@ -13,6 +13,7 @@ import {
   Star
 } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const LookGenerator = () => {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -58,20 +59,30 @@ const LookGenerator = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="py-20 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Gerador de Looks</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Deixe nossa IA criar combinações perfeitas para qualquer ocasião
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Controls */}
@@ -90,7 +101,7 @@ const LookGenerator = () => {
                     <Button
                       key={occasion.id}
                       variant="luxury-outline"
-                      className="h-auto p-4 flex-col gap-2"
+                      className="h-auto p-4 flex-col gap-2 text-foreground"
                     >
                       <span className="text-2xl">{occasion.icon}</span>
                       <span className="text-sm">{occasion.label}</span>
@@ -114,7 +125,7 @@ const LookGenerator = () => {
                     <Button
                       key={condition.id}
                       variant="luxury-outline"
-                      className="h-auto p-4 flex-col gap-1"
+                      className="h-auto p-4 flex-col gap-1 text-foreground"
                     >
                       <span className="text-2xl">{condition.icon}</span>
                       <span className="text-sm font-medium">{condition.label}</span>
@@ -249,7 +260,7 @@ const LookGenerator = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

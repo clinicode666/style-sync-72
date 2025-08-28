@@ -4,6 +4,7 @@ import { Sparkles, Wand2, TrendingUp, Zap } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-fashion.jpg";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { user } = useAuth();
@@ -16,7 +17,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
+    >
       {/* Background Decorations */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-secondary opacity-30" />
       <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
@@ -24,7 +30,12 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Content */}
-        <div className="space-y-8">
+        <motion.div 
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="space-y-8"
+        >
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neuro-inset bg-card/50 text-sm text-foreground">
               <Sparkles className="h-4 w-4 text-primary animate-pulse" />
@@ -100,10 +111,15 @@ const HeroSection = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Hero Image */}
-        <div className="relative">
+        <motion.div 
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="relative"
+        >
           <div className="relative neuro rounded-3xl overflow-hidden bg-card p-4">
             <img 
               src={heroImage} 
@@ -127,9 +143,9 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

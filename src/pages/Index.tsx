@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ClosetSection from "@/components/ClosetSection";
 import LookGenerator from "@/components/LookGenerator";
+import AIRecommendations from "@/components/AIRecommendations";
 import { Sparkles } from "lucide-react";
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
           <>
             <ClosetSection />
             <LookGenerator />
+            <AIRecommendations />
           </>
         ) : null}
       </main>

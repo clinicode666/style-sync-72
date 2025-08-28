@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Camera, Plus, Shirt, Sparkles, Star, Heart } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const ClosetSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("todos");
@@ -63,20 +64,30 @@ const ClosetSection = () => {
     : mockItems.filter(item => item.category === selectedCategory);
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="py-20 bg-background relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Meu Closet</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Organize suas peças, acompanhe o uso e descubra novas combinações
           </p>
-        </div>
+        </motion.div>
 
         {/* Add Item Button */}
         <div className="flex justify-center mb-8">
@@ -105,7 +116,12 @@ const ClosetSection = () => {
         </div>
 
         {/* Items Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <motion.div 
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
           {filteredItems.map((item) => (
             <Card key={item.id} className="neuro border-0 bg-card/50 backdrop-blur-sm hover:shadow-neuro-hover transition-all duration-300 group">
               <CardHeader className="p-4 pb-2">
@@ -153,7 +169,7 @@ const ClosetSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </motion.div>
 
         {/* Empty State */}
         {filteredItems.length === 0 && (
@@ -174,7 +190,7 @@ const ClosetSection = () => {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
