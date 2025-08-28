@@ -138,19 +138,19 @@ All colors MUST be HSL.
   .neuro {
     box-shadow: var(--neuro-shadow-light);
     border-radius: var(--radius);
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    background: hsl(var(--card));
   }
 
   .neuro-inset {
     box-shadow: var(--neuro-shadow-inset);
     border-radius: var(--radius);
-    background: linear-gradient(145deg, hsl(var(--secondary)), hsl(var(--card)));
+    background: hsl(var(--background));
   }
 
   .neuro-pressed {
     box-shadow: var(--neuro-shadow-pressed);
     border-radius: var(--radius);
-    background: linear-gradient(145deg, hsl(var(--secondary)), hsl(var(--card)));
+    background: hsl(var(--muted));
   }
 
   .neuro-hover:hover {

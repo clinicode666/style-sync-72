@@ -11,14 +11,14 @@ const buttonVariants = cva(
       variant: {
         default: "neuro bg-primary text-primary-foreground hover:shadow-gold-glow transform hover:scale-105",
         destructive: "neuro bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "neuro-inset border border-border bg-transparent text-foreground hover:shadow-neuro-hover",
+        outline: "neuro-inset border border-border bg-card text-foreground hover:shadow-neuro-hover",
         secondary: "neuro bg-secondary text-secondary-foreground hover:shadow-neuro-hover",
         ghost: "hover:bg-accent hover:text-accent-foreground transition-luxury",
         link: "text-primary underline-offset-4 hover:underline",
         luxury: "luxury-gradient text-primary-foreground hover:shadow-gold-glow-intense transform hover:scale-105 transition-luxury gold-glow",
-        "luxury-outline": "neuro-inset border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold-glow transition-luxury",
-        neuro: "neuro hover:shadow-neuro-hover text-foreground transition-luxury",
-        "neuro-pressed": "neuro-pressed text-foreground",
+        "luxury-outline": "neuro-inset border-2 border-primary bg-card text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold-glow transition-luxury",
+        neuro: "neuro bg-card text-foreground hover:shadow-neuro-hover transition-luxury",
+        "neuro-pressed": "neuro-pressed bg-muted text-foreground",
       },
       size: {
         default: "h-10 px-4 py-2",
