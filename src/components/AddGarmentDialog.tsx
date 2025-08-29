@@ -104,6 +104,7 @@ const AddGarmentDialog = ({ trigger }: AddGarmentDialogProps) => {
       // Create garment
       await addGarment({
         ...formData,
+        color_secondary: formData.color_secondary === "none" ? null : formData.color_secondary,
         image_url: imageUrl,
         last_worn: undefined
       });
@@ -242,7 +243,7 @@ const AddGarmentDialog = ({ trigger }: AddGarmentDialogProps) => {
                   <SelectValue placeholder="Cor secundária (opcional)" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Nenhuma</SelectItem>
+                  <SelectItem value="none">Nenhuma</SelectItem>
                   {colors.map(color => (
                     <SelectItem key={color} value={color}>
                       {color.charAt(0).toUpperCase() + color.slice(1)}
