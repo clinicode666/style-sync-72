@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import ClosetSection from "@/components/ClosetSection";
 import LookGenerator from "@/components/LookGenerator";
 import AIRecommendations from "@/components/AIRecommendations";
+import MVPStatus from "@/components/MVPStatus";
 import { Sparkles } from "lucide-react";
 
 const Index = () => {
@@ -32,8 +33,19 @@ const Index = () => {
             <ClosetSection />
             <LookGenerator />
             <AIRecommendations />
+            <div className="py-20">
+              <div className="container mx-auto px-4">
+                <MVPStatus />
+              </div>
+            </div>
           </>
-        ) : null}
+        ) : (
+          <div className="py-20">
+            <div className="container mx-auto px-4">
+              <MVPStatus />
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
