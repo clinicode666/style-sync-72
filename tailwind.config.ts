@@ -64,10 +64,10 @@ export default {
 				}
 			},
 			colors: {
-				'emerald': {
-					primary: 'hsl(var(--emerald-primary))',
-					secondary: 'hsl(var(--emerald-secondary))',
-					tertiary: 'hsl(var(--emerald-tertiary))',
+				'beige': {
+					primary: 'hsl(var(--beige-primary))',
+					secondary: 'hsl(var(--beige-secondary))',
+					tertiary: 'hsl(var(--beige-tertiary))',
 				}
 			},
 			backgroundImage: {
@@ -80,9 +80,9 @@ export default {
 				'neuro-inset': 'var(--neuro-shadow-inset)',
 				'neuro-pressed': 'var(--neuro-shadow-pressed)',
 				'neuro-hover': 'var(--neuro-shadow-hover)',
-				'emerald-glow': 'var(--emerald-glow)',
-				'emerald-glow-intense': 'var(--emerald-glow-intense)',
-				'emerald-shadow': 'var(--emerald-shadow)'
+				'beige-glow': 'var(--beige-glow)',
+				'beige-glow-intense': 'var(--beige-glow-intense)',
+				'beige-shadow': 'var(--beige-shadow)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
@@ -140,8 +140,8 @@ export default {
 					'100%': { opacity: '1', transform: 'scale(1)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: 'var(--emerald-glow)' },
-					'50%': { boxShadow: 'var(--emerald-glow-intense)' }
+					'0%, 100%': { boxShadow: 'var(--beige-glow)' },
+					'50%': { boxShadow: 'var(--beige-glow-intense)' }
 				}
 			},
 			animation: {

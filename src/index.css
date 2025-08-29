@@ -8,45 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxury Dark Theme with Emerald Accents */
+    /* Luxury Dark Theme with Beige Accents */
     --background: 220 13% 6%;
-    --foreground: 160 84% 85%;
+    --foreground: 45 25% 85%;
 
     --card: 220 13% 8%;
-    --card-foreground: 160 84% 85%;
+    --card-foreground: 45 25% 85%;
 
     --popover: 220 13% 8%;
-    --popover-foreground: 160 84% 85%;
+    --popover-foreground: 45 25% 85%;
 
-    --primary: 150 80% 45%;
+    --primary: 45 30% 55%;
     --primary-foreground: 220 13% 6%;
 
     --secondary: 220 13% 12%;
-    --secondary-foreground: 160 84% 85%;
+    --secondary-foreground: 45 25% 85%;
 
     --muted: 220 13% 12%;
-    --muted-foreground: 160 50% 65%;
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 148 90% 35%;
+    --accent: 40 35% 45%;
     --accent-foreground: 220 13% 6%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 160 84% 85%;
+    --destructive-foreground: 45 25% 85%;
 
     --border: 220 13% 15%;
     --input: 220 13% 15%;
-    --ring: 150 80% 45%;
+    --ring: 45 30% 55%;
 
     --radius: 1rem;
 
     /* Luxury Neumorphism Design Tokens */
-    --emerald-primary: 150 80% 45%;
-    --emerald-secondary: 152 85% 40%;
-    --emerald-tertiary: 148 90% 55%;
+    --beige-primary: 45 30% 55%;
+    --beige-secondary: 42 35% 50%;
+    --beige-tertiary: 48 40% 65%;
     
-    --luxury-gradient: linear-gradient(135deg, hsl(150 80% 45%), hsl(152 85% 40%));
+    --luxury-gradient: linear-gradient(135deg, hsl(45 30% 55%), hsl(42 35% 50%));
     --luxury-gradient-subtle: linear-gradient(135deg, hsl(220 13% 8%), hsl(220 13% 12%));
-    --luxury-gradient-glow: linear-gradient(135deg, hsl(150 80% 45% / 0.2), hsl(152 85% 40% / 0.2));
+    --luxury-gradient-glow: linear-gradient(135deg, hsl(45 30% 55% / 0.2), hsl(42 35% 50% / 0.2));
     
     /* Neumorphism Shadows */
     --neuro-shadow-light: 8px 8px 16px hsl(220 13% 4%), -8px -8px 16px hsl(220 13% 8%);
@@ -54,54 +54,54 @@ All colors MUST be HSL.
     --neuro-shadow-pressed: inset 4px 4px 8px hsl(220 13% 4%), inset -4px -4px 8px hsl(220 13% 8%);
     --neuro-shadow-hover: 12px 12px 24px hsl(220 13% 3%), -12px -12px 24px hsl(220 13% 9%);
     
-    /* Emerald Glow Effects */
-    --emerald-glow: 0 0 20px hsl(150 80% 45% / 0.5);
-    --emerald-glow-intense: 0 0 40px hsl(150 80% 45% / 0.7), 0 0 60px hsl(150 80% 45% / 0.4);
-    --emerald-shadow: 0 10px 30px hsl(150 80% 45% / 0.3);
+    /* Beige Glow Effects */
+    --beige-glow: 0 0 20px hsl(45 30% 55% / 0.5);
+    --beige-glow-intense: 0 0 40px hsl(45 30% 55% / 0.7), 0 0 60px hsl(45 30% 55% / 0.4);
+    --beige-shadow: 0 10px 30px hsl(45 30% 55% / 0.3);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-luxury: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 220 13% 8%;
-    --sidebar-foreground: 160 84% 85%;
-    --sidebar-primary: 150 80% 45%;
+    --sidebar-foreground: 45 25% 85%;
+    --sidebar-primary: 45 30% 55%;
     --sidebar-primary-foreground: 220 13% 6%;
     --sidebar-accent: 220 13% 12%;
-    --sidebar-accent-foreground: 160 84% 85%;
+    --sidebar-accent-foreground: 45 25% 85%;
     --sidebar-border: 220 13% 15%;
-    --sidebar-ring: 150 80% 45%;
+    --sidebar-ring: 45 30% 55%;
   }
 
   .dark {
     /* Dark mode uses the same luxury theme */
     --background: 220 13% 4%;
-    --foreground: 160 84% 90%;
+    --foreground: 45 25% 90%;
 
     --card: 220 13% 6%;
-    --card-foreground: 160 84% 90%;
+    --card-foreground: 45 25% 90%;
 
     --popover: 220 13% 6%;
-    --popover-foreground: 160 84% 90%;
+    --popover-foreground: 45 25% 90%;
 
-    --primary: 150 80% 50%;
+    --primary: 45 30% 60%;
     --primary-foreground: 220 13% 4%;
 
     --secondary: 220 13% 10%;
-    --secondary-foreground: 160 84% 90%;
+    --secondary-foreground: 45 25% 90%;
 
     --muted: 220 13% 10%;
-    --muted-foreground: 160 60% 70%;
+    --muted-foreground: 45 20% 70%;
 
-    --accent: 148 90% 40%;
+    --accent: 40 35% 50%;
     --accent-foreground: 220 13% 4%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 160 84% 90%;
+    --destructive-foreground: 45 25% 90%;
 
     --border: 220 13% 12%;
     --input: 220 13% 12%;
-    --ring: 150 80% 50%;
+    --ring: 45 30% 60%;
     
     /* Enhanced Neumorphism for Dark Mode */
     --neuro-shadow-light: 10px 10px 20px hsl(220 13% 2%), -10px -10px 20px hsl(220 13% 6%);
@@ -110,13 +110,13 @@ All colors MUST be HSL.
     --neuro-shadow-hover: 15px 15px 30px hsl(220 13% 1%), -15px -15px 30px hsl(220 13% 7%);
     
     --sidebar-background: 220 13% 6%;
-    --sidebar-foreground: 160 84% 90%;
-    --sidebar-primary: 150 80% 50%;
+    --sidebar-foreground: 45 25% 90%;
+    --sidebar-primary: 45 30% 60%;
     --sidebar-primary-foreground: 220 13% 4%;
     --sidebar-accent: 220 13% 10%;
-    --sidebar-accent-foreground: 160 84% 90%;
+    --sidebar-accent-foreground: 45 25% 90%;
     --sidebar-border: 220 13% 12%;
-    --sidebar-ring: 150 80% 50%;
+    --sidebar-ring: 45 30% 60%;
   }
 }
 
@@ -159,13 +159,13 @@ All colors MUST be HSL.
     transition: var(--transition-luxury);
   }
 
-  .emerald-glow {
-    box-shadow: var(--emerald-glow);
+  .beige-glow {
+    box-shadow: var(--beige-glow);
     transition: var(--transition-luxury);
   }
 
-  .emerald-glow:hover {
-    box-shadow: var(--emerald-glow-intense);
+  .beige-glow:hover {
+    box-shadow: var(--beige-glow-intense);
   }
 
   .luxury-gradient {
