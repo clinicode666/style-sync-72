@@ -37,10 +37,6 @@ const HeroSection = () => {
           className="space-y-8"
         >
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neuro-inset bg-card/50 text-sm text-foreground">
-              <Sparkles className="h-4 w-4 text-primary animate-pulse" />
-              IA Powered Fashion Assistant
-            </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="text-gradient">Seu Estilista</span><br />
