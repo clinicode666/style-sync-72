@@ -64,10 +64,10 @@ export default {
 				}
 			},
 			colors: {
-				'beige': {
-					primary: 'hsl(var(--beige-primary))',
-					secondary: 'hsl(var(--beige-secondary))',
-					tertiary: 'hsl(var(--beige-tertiary))',
+				'wine': {
+					primary: 'hsl(var(--wine-primary))',
+					secondary: 'hsl(var(--wine-secondary))',
+					tertiary: 'hsl(var(--wine-tertiary))',
 				}
 			},
 			backgroundImage: {
@@ -80,9 +80,9 @@ export default {
 				'neuro-inset': 'var(--neuro-shadow-inset)',
 				'neuro-pressed': 'var(--neuro-shadow-pressed)',
 				'neuro-hover': 'var(--neuro-shadow-hover)',
-				'beige-glow': 'var(--beige-glow)',
-				'beige-glow-intense': 'var(--beige-glow-intense)',
-				'beige-shadow': 'var(--beige-shadow)'
+				'wine-glow': 'var(--wine-glow)',
+				'wine-glow-intense': 'var(--wine-glow-intense)',
+				'wine-shadow': 'var(--wine-shadow)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
@@ -140,8 +140,8 @@ export default {
 					'100%': { opacity: '1', transform: 'scale(1)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: 'var(--beige-glow)' },
-					'50%': { boxShadow: 'var(--beige-glow-intense)' }
+					'0%, 100%': { boxShadow: 'var(--wine-glow)' },
+					'50%': { boxShadow: 'var(--wine-glow-intense)' }
 				}
 			},
 			animation: {
