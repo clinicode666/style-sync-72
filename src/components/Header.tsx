@@ -57,10 +57,6 @@ const Header = () => {
         <div className="flex items-center gap-3">
           {user ? (
             <>
-              <Button variant="luxury-outline" size="sm" className="hidden sm:flex">
-                <Camera className="h-4 w-4" />
-                Adicionar Peça
-              </Button>
               <Button variant="luxury" size="sm">
                 <Sparkles className="h-4 w-4" />
                 Gerar Look
