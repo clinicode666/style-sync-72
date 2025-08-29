@@ -23,10 +23,16 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLooks } from "@/hooks/useLooks";
+import { toast } from "@/hooks/use-toast";
 
 const LookGenerator = () => {
   const [isGenerating, setIsGenerating] = useState(false);
-  const [currentLook, setCurrentLook] = useState(null);
+  const [currentLook, setCurrentLook] = useState<any>(null);
+  const [selectedOccasion, setSelectedOccasion] = useState("");
+  const [selectedWeather, setSelectedWeather] = useState("");
+  
+  const { generateLook, looks, loading } = useLooks();
 
   const occasions = [
     { id: "trabalho", label: "Trabalho", icon: Briefcase },
@@ -44,27 +50,41 @@ const LookGenerator = () => {
     { id: "chuva", label: "Chuva", icon: CloudRain, temp: "Variável" },
   ];
 
-  const mockLook = {
-    id: 1,
-    score: 92,
-    items: [
-      { name: "Camisa Branca Clássica", category: "Top", image: "/placeholder.svg" },
-      { name: "Blazer Azul Marinho", category: "Sobretudo", image: "/placeholder.svg" },
-      { name: "Calça Social Preta", category: "Bottom", image: "/placeholder.svg" },
-      { name: "Sapato Social Preto", category: "Calçado", image: "/placeholder.svg" },
-      { name: "Relógio Clássico", category: "Acessório", image: "/placeholder.svg" },
-    ],
-    occasion: "Trabalho",
-    weather: "Ameno",
-    description: "Look elegante e profissional perfeito para reuniões importantes. A combinação clássica de cores neutras transmite confiança e sofisticação."
-  };
+  const handleGenerateLook = async () => {
+    if (!selectedOccasion || !selectedWeather) {
+      toast({
+        title: "Seleção obrigatória",
+        description: "Por favor, selecione uma ocasião e o clima.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  const handleGenerateLook = () => {
     setIsGenerating(true);
-    setTimeout(() => {
-      setCurrentLook(mockLook);
+    
+    try {
+      const generatedLook = await generateLook(selectedOccasion, selectedWeather);
+      if (generatedLook) {
+        // Transform to match the expected format
+        const transformedLook = {
+          id: generatedLook.id,
+          score: generatedLook.rating || 85,
+          items: generatedLook.garments.map(garment => ({
+            name: `${garment.type} ${garment.color_primary}`,
+            category: garment.type,
+            image: garment.image_url
+          })),
+          occasion: selectedOccasion,
+          weather: selectedWeather,
+          description: generatedLook.notes || `Look perfeito para ${selectedOccasion} em clima ${selectedWeather}.`
+        };
+        setCurrentLook(transformedLook);
+      }
+    } catch (error) {
+      console.error('Error generating look:', error);
+    } finally {
       setIsGenerating(false);
-    }, 2000);
+    }
   };
 
   return (
@@ -111,8 +131,9 @@ const LookGenerator = () => {
                     return (
                       <Button
                         key={occasion.id}
-                        variant="luxury-outline"
+                        variant={selectedOccasion === occasion.id ? "luxury" : "luxury-outline"}
                         className="h-auto p-4 flex-col gap-2 text-foreground"
+                        onClick={() => setSelectedOccasion(occasion.id)}
                       >
                         <IconComponent className="h-6 w-6 text-primary" />
                         <span className="text-sm">{occasion.label}</span>
@@ -138,8 +159,9 @@ const LookGenerator = () => {
                     return (
                       <Button
                         key={condition.id}
-                        variant="luxury-outline"
+                        variant={selectedWeather === condition.id ? "luxury" : "luxury-outline"}
                         className="h-auto p-4 flex-col gap-1 text-foreground"
+                        onClick={() => setSelectedWeather(condition.id)}
                       >
                         <IconComponent className="h-6 w-6 text-primary" />
                         <span className="text-sm font-medium">{condition.label}</span>
