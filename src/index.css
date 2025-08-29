@@ -168,6 +168,27 @@ All colors MUST be HSL.
     box-shadow: var(--wine-glow-intense);
   }
 
+  .gold-glow {
+    box-shadow: var(--wine-glow);
+    transition: var(--transition-luxury);
+  }
+
+  .gold-glow:hover {
+    box-shadow: var(--wine-glow-intense);
+  }
+
+  .shadow-gold-glow {
+    box-shadow: var(--wine-glow);
+  }
+
+  .shadow-gold-glow-intense {
+    box-shadow: var(--wine-glow-intense);
+  }
+
+  .shadow-neuro-hover {
+    box-shadow: var(--neuro-shadow-hover);
+  }
+
   .luxury-gradient {
     background: var(--luxury-gradient);
     background-size: 200% 200%;
